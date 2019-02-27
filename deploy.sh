@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -e
+
 yarn run build
 
 PACKAGE_VERSION=$(cat package.json \
@@ -8,8 +11,9 @@ PACKAGE_VERSION=$(cat package.json \
   | sed 's/[",]//g' \
   | tr -d '[[:space:]]')
 
-echo $PACKAGE_VERSION
+cd dist
 
-git add . && git commit -m "Deploy v$PACKAGE_VERSION" && git push;
-
-git subtree push --prefix dist origin gh-pages
+git init
+git add -A
+git commit -m "Deploy v$PACKAGE_VERSION"
+git push -f git@github.com:robbertvancaem/vue-gsap-animations.git master:gh-pages
