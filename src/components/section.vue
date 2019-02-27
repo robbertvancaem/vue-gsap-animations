@@ -1,5 +1,5 @@
 <template>
-  <section :style="style">
+  <section :style="style" data-aos="fade-left">
     <slot></slot>
   </section>
 </template>

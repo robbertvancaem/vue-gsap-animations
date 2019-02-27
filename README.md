@@ -4,6 +4,12 @@
 
 You can preview this project [here](https://robbertvancaem.github.io/vue-gsap-animations/)
 
+## Ideas
+
+[ ] Circle morphing into triangle > Triancle
+[ ] Masked landscape > http://timrijkse.nl/animating-an-svg-with-greensock/
+[ ] Interactivity upon hover/click
+
 ## Project setup
 
 ```
