@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <h1>Restless box</h1>
-    <p>Look at him go, such a restless soul</p>
-    <div ref="box" class="box"></div>
-  </div>
+  <div ref="box" class="box"></div>
 </template>
 
 <script>

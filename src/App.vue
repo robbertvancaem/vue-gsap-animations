@@ -6,10 +6,22 @@
       <p>Scroll down... maybe they're there...</p>
     </Section>
     <Section :odd="true">
+      <h1>Psyched box</h1>
+      <p>Look at him go, such a restless soul</p>
       <Box />
     </Section>
     <Section>
-      <Bubble />
+      <h1>Eyes on the prize</h1>
+      <p>It's watching youuuuu...</p>
+      <Flex>
+        <Bubble />
+        <Bubble :delay="0.5" />
+      </Flex>
+    </Section>
+    <Section :odd="true">
+      <h1>Poor little triancle</h1>
+      <p>Doesn't really know what to be. Can relate...</p>
+      <Triancle />
     </Section>
   </div>
 </template>
@@ -17,11 +29,13 @@
 <script>
 import Box from "./components/box";
 import Bubble from "./components/bubble";
+import Flex from "./components/flex";
 import Section from "./components/section";
+import Triancle from "./components/triancle";
 
 export default {
   name: "app",
-  components: { Box, Bubble, Section }
+  components: { Box, Bubble, Flex, Section, Triancle }
 };
 </script>
 

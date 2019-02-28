@@ -1,13 +1,9 @@
 <template>
-  <div>
-    <h1>Eyes on the prize</h1>
-    <p>It's watching youuuuu...</p>
-    <div class="bubble-wrapper">
-      <div ref="bubble" class="bubble">
-        <img src="../assets/eye.svg" />
-      </div>
-      <div ref="bubblePulse" class="bubble-pulse"></div>
+  <div class="bubble-wrapper">
+    <div ref="bubble" class="bubble">
+      <img src="../assets/eye.svg" />
     </div>
+    <div ref="bubblePulse" class="bubble-pulse"></div>
   </div>
 </template>
 
@@ -15,6 +11,9 @@
 import { TimelineLite, Back, Elastic, Expo } from "gsap";
 
 export default {
+  props: {
+    delay: Number
+  },
   data() {
     return {
       timeline: null
@@ -24,6 +23,7 @@ export default {
   mounted() {
     const { bubble, bubblePulse } = this.$refs;
     this.timeline = new TimelineLite({
+      delay: this.delay || 0,
       onComplete: () => this.timeline.restart()
     });
 
@@ -79,6 +79,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.bubble:hover {
+  background: #d2c7b9;
+  cursor: pointer;
 }
 .bubble img {
   transform: scale(1.4);
